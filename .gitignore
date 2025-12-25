@@ -1,34 +1,36 @@
-# --- macOS ---
-.DS_Store
-
-# --- CLion / IDEs ---
-.idea/
-cmake-build-*/
-CMakeLists.txt.user
-
-# --- CMake (Build Artifacts) ---
-CMakeCache.txt
-CMakeFiles/
-CMakeScripts/
-Testing/
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps/
-CMakeUserPresets.json
-
-# --- JUCE ---
+# --- JUCE Specific ---
+# A pasta Builds deve ser gerada localmente pelo Projucer/CMake
 Builds/
 JuceLibraryCode/
-*.jucer
 
-# --- Binários e Bibliotecas ---
-*.o
-*.obj
-*.lib
-*.dll
-*.dylib
-*.so
-*.a
+# Ficheiros de backup do Projucer
+*.jucer_backup_autosave_*
+*.jucer.backup_*
+
+# --- IDE / OS Specific ---
+# Visual Studio
+.vs/
+*.sdf
+*.opensdf
+*.suo
+*.user
+ipch/
+Debug/
+Release/
+x64/
+
+# Xcode / Mac
+.DS_Store
+*.macosx
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+
+# CLion / CMake
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+.idea/
+
+# --- VST / Audio ---
+# Se tiveres samples de teste grandes, ignora-os
+TestSamples/

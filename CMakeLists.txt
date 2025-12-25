@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.22)
 
 project(909Serrot_Plugin VERSION 0.0.1)
 
+add_compile_options(-Wno-error=format)
+
 add_subdirectory(modules/JUCE)
 
 juce_add_plugin(909Serrot_Plugin
@@ -23,7 +25,13 @@ target_sources(909Serrot_Plugin
         Source/PluginProcessor.cpp
         Source/PluginProcessor.h
         Source/PluginEditor.cpp
-        Source/PluginEditor.h)
+        Source/PluginEditor.h
+        Source/DSP/IDspModule.h
+        Source/DSP/ERA/EraEffect.cpp
+        Source/DSP/ERA/EraEffect.h
+        Source/Parameters/ParameterLayout.cpp
+        Source/Parameters/ParameterLayout.h
+)
 
 target_compile_definitions(909Serrot_Plugin
     PUBLIC
